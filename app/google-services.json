@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "132815443449",
+    "firebase_url": "https://listviewhimmerland-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "listviewhimmerland2-c34d1",
+    "storage_bucket": "listviewhimmerland2-c34d1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:132815443449:android:652e3ad97a4ee732f95928",
+        "android_client_info": {
+          "package_name": "com.example.listviewhimmerland"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "132815443449-3jc9vh85pous4lb392cr6edgpog9fl9n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLfcdTLB3pxWOaMzr_0aM_AzGggZkG6kQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "132815443449-3jc9vh85pous4lb392cr6edgpog9fl9n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
