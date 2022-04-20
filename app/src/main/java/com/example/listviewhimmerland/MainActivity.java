@@ -17,6 +17,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.GenericTypeIndicator;
 
 import java.sql.DatabaseMetaData;
 import java.util.ArrayList;
@@ -75,9 +76,10 @@ public class MainActivity extends AppCompatActivity {
         mRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String previousChildName) {
-//                Map<String,String> mymap = dataSnapshot.getValue(Map.class);
-//                myArrayList.add(mymap.get("text"));
-//                myArrayAdapter.notifyDataSetChanged();
+                GenericTypeIndicator<Map<String, String>> genericTypeIndicator = new GenericTypeIndicator<Map<String, String>>() {};
+                Map<String, String> mymap = dataSnapshot.getValue(genericTypeIndicator );
+                myArrayList.add((String) mymap.get("text"));
+                myArrayAdapter.notifyDataSetChanged();
 
                 
             }
