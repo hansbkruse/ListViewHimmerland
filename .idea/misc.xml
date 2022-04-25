@@ -3,8 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/hansb/AndroidStudioProjects/ListViewHimmerland/app/src/main/res/layout/activity_main.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/hansb/AndroidStudioProjects/ListViewHimmerland/app/src/main/res/drawable/ic2_baseline_add_24.xml" value="0.1" />
+        <entry key="..\:/Users/hansb/AndroidStudioProjects/ListViewHimmerland/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.1875" />
+        <entry key="..\:/Users/hansb/AndroidStudioProjects/ListViewHimmerland/app/src/main/res/drawable/ic_plus_24.xml" value="0.2125" />
+        <entry key="..\:/Users/hansb/AndroidStudioProjects/ListViewHimmerland/app/src/main/res/layout/activity_add_post.xml" value="0.15806159420289856" />
+        <entry key="..\:/Users/hansb/AndroidStudioProjects/ListViewHimmerland/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/hansb/AndroidStudioProjects/ListViewHimmerland/app/src/main/res/layout/add_post.xml" value="0.25" />
         <entry key="..\:/Users/hansb/AndroidStudioProjects/ListViewHimmerland/app/src/main/res/layout/addpost.xml" value="0.1308876811594203" />
+        <entry key="..\:/Users/hansb/AndroidStudioProjects/ListViewHimmerland/app/src/main/res/layout/fragment_1.xml" value="0.1" />
+        <entry key="..\:/Users/hansb/AndroidStudioProjects/ListViewHimmerland/app/src/main/res/layout/fragment_2.xml" value="0.14764492753623187" />
+        <entry key="..\:/Users/hansb/AndroidStudioProjects/ListViewHimmerland/app/src/main/res/layout/fragment_3.xml" value="0.14764492753623187" />
+        <entry key="..\:/Users/hansb/AndroidStudioProjects/ListViewHimmerland/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/hansb/AndroidStudioProjects/ListViewHimmerland/app/src/main/res/xml/addmessage.xml" value="0.1" />
       </map>
     </option>

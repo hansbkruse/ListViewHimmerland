@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ListViewHimmerland">
-<!--        <activity android:name=".AddPost" />-->
+        <activity
+            android:name=".AddPost"
+            android:parentActivityName=".MainActivity"
+            android:exported="false" />
+        <!-- <activity android:name=".AddPost" /> -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -19,7 +23,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
