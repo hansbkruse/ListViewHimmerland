@@ -57,8 +57,8 @@ public class AddPost extends AppCompatActivity {
         final ArrayAdapter<String> myArrayAdapter = new ArrayAdapter<String>(AddPost.this,android.R.layout.simple_list_item_1,myArrayList);
 
         // Reference to the ListView
-        myListView = (ListView) findViewById(R.id.listview1);
-        myListView.setAdapter(myArrayAdapter);
+//        myListView = (ListView) findViewById(R.id.listview1);
+//        myListView.setAdapter(myArrayAdapter);
 
 
 

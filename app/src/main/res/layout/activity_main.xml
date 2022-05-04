@@ -7,7 +7,6 @@
     tools:context=".MainActivity">
 
 
-
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
@@ -43,6 +42,16 @@
                 android:text="Byttebørs" />
 
         </com.google.android.material.tabs.TabLayout>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerView"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/my_nav" />
+
+
     </androidx.viewpager.widget.ViewPager>
 
     <ListView
@@ -66,29 +75,78 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
-        android:layout_margin="16dp"
-        app:layout_constraintRight_toRightOf="@+id/listview1"
-        app:layout_constraintTop_toBottomOf="@id/listview1"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
+        app:layout_constraintRight_toRightOf="parent"
         app:srcCompat="@drawable/ic2_baseline_add_24" />
 
-<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--        android:id="@+id/bottomNavigationView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="75dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.5"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:menu="@menu/bottom_nav_menu"/>-->
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/bottom_nav_menu"/>
 
-    <!--EditText
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/edittext1"
+        android:checked="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:orientation="horizontal"
+        >
+
+        <RadioButton
+            android:id="@+id/radioOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forside"
+            android:onClick="checkButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+        <RadioButton
+            android:id="@+id/radioTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Begivenheder"
+            android:onClick="checkButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+        <RadioButton
+            android:id="@+id/radioThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Byttebørs"
+            android:onClick="checkButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+    </RadioGroup>
+
+    <EditText
         android:id="@+id/edittext1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Text Here"
-        app:layout_constraintBottom_toTopOf="@id/button1"
-        app:layout_constraintTop_toBottomOf="@+id/listview1" />
+        app:layout_constraintBottom_toTopOf="@id/edittext2"
 
+        />
+
+
+    <EditText
+        android:id="@+id/edittext2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Text Here"
+        app:layout_constraintBottom_toTopOf="@id/button1"
+
+        />
 
     <Button
         android:id="@+id/button1"
@@ -97,9 +155,8 @@
         android:layout_below="@+id/edittext1"
         android:layout_centerHorizontal="true"
         android:text="Submit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/edittext1"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edittext1" /-->
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

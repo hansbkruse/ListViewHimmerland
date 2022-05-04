@@ -7,13 +7,20 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
@@ -34,9 +41,13 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
 
     public FloatingActionButton floatingActionButton;
-    
+    public BottomNavigationView bottomNavigationView;
+
     EditText edt1;
+    EditText edt2;
     Button btn1;
+    RadioGroup radioGroup;
+    RadioButton forside, begivenheder, byttebørs;
 
     ListView myListView;
     ArrayList<String> myArrayList = new ArrayList<>();
@@ -51,6 +62,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+//        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+//        NavController navController = Navigation.findNavController(this, R.id.fragment1);
+//        NavigationUI.setupWithNavController(bottomNavigationView, navController);
+
+
         floatingActionButton = findViewById(R.id.fab);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
 
         tabLayout = findViewById(R.id.tablayout);
@@ -81,26 +98,36 @@ public class MainActivity extends AppCompatActivity {
         // Reference to the ListView
         myListView = (ListView) findViewById(R.id.listview1);
         myListView.setAdapter(myArrayAdapter);
-//
-//
-//
+
+
+
         mRef = database.getReference("messages");
 
-        /*edt1 = (EditText) findViewById(R.id.edittext1);
+        edt1 = (EditText) findViewById(R.id.edittext1);
+        edt2 = (EditText) findViewById(R.id.edittext2);
+        radioGroup = findViewById(R.id.radioGroup);
+        forside = findViewById(R.id.radioOne);
+        begivenheder = findViewById(R.id.radioTwo);
+        byttebørs = findViewById(R.id.radioThree);
         btn1 = (Button) findViewById(R.id.button1);
 
-         // Pushes input to database with a new_node
+
+
+        //Pushes input to database with a new_node
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String input =edt1.getText().toString();
+                String input2 =edt2.getText().toString();
                 DatabaseReference new_node = mRef.push();
                 Map<String,String> mymap = new HashMap<String,String>();
-                mymap.put("title","My Title");
+                mymap.put("title",input);
                 mymap.put("text",input);
                 new_node.setValue(mymap);
             }
-        });*/
+        });
+
+
 
         // Writes messages from database via input
         mRef.addChildEventListener(new ChildEventListener() {
@@ -108,7 +135,8 @@ public class MainActivity extends AppCompatActivity {
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String previousChildName) {
                 GenericTypeIndicator<Map<String, String>> genericTypeIndicator = new GenericTypeIndicator<Map<String, String>>() {};
                 Map<String, String> mymap = dataSnapshot.getValue(genericTypeIndicator );
-                myArrayList.add((String) mymap.get("text"));
+                myArrayList.add((String) mymap.get("title")+" "+mymap.get("text"));
+
                 myArrayAdapter.notifyDataSetChanged();
 
                 
